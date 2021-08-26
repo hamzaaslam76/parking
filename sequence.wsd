@@ -1,0 +1,16 @@
+@startuml Uml Diagram
+(*) --> "Initialization"
+
+if "days" then
+ -->[true] "WorkingDays"
+ -->[false] "OffDays"
+ if "workingDays" then
+  --> "startTime"
+  if "workingDays"
+  -right-> (*)
+else
+  ->[false] "Something else"
+  -->[Ending process] (*)
+endif
+
+@enduml
